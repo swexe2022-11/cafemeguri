@@ -1,0 +1,11 @@
+<%= form_tag top_main_path, method: :post do %>
+  <%= label_tag :uid, 'ユーザーID' %> 
+  <%= text_field_tag :uid %> 
+  <%= label_tag :pass, 'パスワード' %> 
+  <%= password_field_tag :pass %> 
+  <%= submit_tag 'ログインする' %>
+  
+  <p>
+  <%= link_to '新規ユーザ追加', new_user_path %>
+  </p>
+<% end %>
