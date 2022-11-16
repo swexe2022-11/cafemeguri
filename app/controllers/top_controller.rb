@@ -1,5 +1,4 @@
 class TopController < ApplicationController
-  def top
   def main
     render 'login'
   end
@@ -17,7 +16,7 @@ class TopController < ApplicationController
   end
 
   def logout
-    flash[:notice] = 'ログアウトしました'
+   flash[:notice] = 'ログアウトしました'
     session.delete(:login_uid)
     redirect_to root_path
   end
