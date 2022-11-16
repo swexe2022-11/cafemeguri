@@ -1,12 +1,15 @@
 <h1>投稿ページ</h1>
-<%= form_for @caves, action: :create do |f| %>
+<%= form_for @cafe, action: :create do |f| %>
 <p>
   <%= f.label :name, '店名' %>
   <%= f.text_field :name %>
 </p>
 <p>
   <%= f.label :message, '説明' %>
-  <%= f.text_field :message %>
+  <%= f.text_area :message,:size=>"60x10" %>
+</p>
+<p>
+    
 </p>
   <%= f.submit "投稿"%>
 <% end %>

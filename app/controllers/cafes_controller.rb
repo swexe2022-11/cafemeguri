@@ -1,6 +1,6 @@
 class CafesController < ApplicationController
   def index
-    @caves = Cafe.all
+    @cafe = Cafe.all
   end
 
   def new
@@ -8,8 +8,8 @@ class CafesController < ApplicationController
   end
 
   def create
-    @cafe = Cafe.new(name: params[:cafe][:name],message: params[:cafe][:message])
-    @cafe.save
+    @caves = Cafe.new(name: params[:cafe][:name],message: params[:cafe][:message])
+    @caves.save
     redirect_to'/'
   end
 
