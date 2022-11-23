@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :caves
-  root 'cafes#new'
+  root 'cafes#index'
   get 'cafes/index'
   get 'cafes/new'
   get 'cafes/create'
