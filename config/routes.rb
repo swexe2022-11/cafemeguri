@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  root 'top#top'
   get 'top/main'
   get 'top/logout'
   post 'top/login'
-  root 'top#top'
   resources :users
   resources :caves
   resources :users
