@@ -1,1 +1,6 @@
-<h1>Cafes#index</h1>
+<% if session[:uid] %>
+  <%= link_to '新規追加', new_cafe_path %>
+<% else %>
+  <% link_to 'ログイン', top_top_path %>
+<% end %>
+
