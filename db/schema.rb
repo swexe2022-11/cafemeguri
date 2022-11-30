@@ -10,6 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 2022_11_30_083418) do
+=======
 ActiveRecord::Schema.define(version: 2022_11_30_083736) do
 
   create_table "cafes", force: :cascade do |t|
@@ -22,10 +25,26 @@ ActiveRecord::Schema.define(version: 2022_11_30_083736) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+>>>>>>> dc6a0d39bd4f440eac0af31d4a1f46f102f39782
 
   create_table "caves", force: :cascade do |t|
     t.string "name"
     t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tag_maps", force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_tag_maps_on_post_id"
+    t.index ["tag_id"], name: "index_tag_maps_on_tag_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "tag_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -35,6 +54,7 @@ ActiveRecord::Schema.define(version: 2022_11_30_083736) do
     t.string "pass"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
 end
