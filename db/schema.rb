@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2022_11_16_075031) do
 
-
   create_table "caves", force: :cascade do |t|
     t.string "name"
     t.string "message"

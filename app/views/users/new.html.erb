@@ -1,4 +1,7 @@
 <%= form_for @user, url: {action: :create} do |f| %>
+
+ <div class="set_center_outer">
+    <div class="set_center_inner">
   <%= f.label :uid, 'ユーザーID' %> 
   <%= f.text_field :uid %> 
   <p>
@@ -10,4 +13,6 @@
     <%= f.password_field :password_confirmation %>
   </p>
   <%= f.submit '登録' %>
+    </div>
+  </div>
 <% end %>
