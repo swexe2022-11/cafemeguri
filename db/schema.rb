@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2022_11_30_083418) do
+=======
+ActiveRecord::Schema.define(version: 2022_11_30_083736) do
+
+  create_table "cafes", force: :cascade do |t|
+    t.string "name"
+    t.string "message"
+    t.string "map"
+    t.binary "image"
+    t.datetime "date"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+>>>>>>> dc6a0d39bd4f440eac0af31d4a1f46f102f39782
 
   create_table "caves", force: :cascade do |t|
     t.string "name"

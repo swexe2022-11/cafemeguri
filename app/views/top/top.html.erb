@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <body>
-  <p class='login'>
-  <% if session[:login_uid] %>
-    <%= link_to 'ログアウト', top_logout_path, class:'link' %>
-  <% else %>
-    <%= link_to 'ログイン', top_main_path, class:'link' %>
-  <% end %>
-  <%= link_to 'ユーザ一登録', new_user_path, class:'link' %>
-  </p>
-  </body>
-</html>
+<p>
+<% if session[:login_uid] %>
+  <%= link_to 'ログアウト', top_logout_path %><br>
+  <%= link_to "投稿する", new_cafe_path %>
+<% else %>
+  <%= link_to 'ログイン', top_main_path %><br>
+  <%= link_to 'ユーザ一登録', new_user_path %>
+<% end %>
+</p>
