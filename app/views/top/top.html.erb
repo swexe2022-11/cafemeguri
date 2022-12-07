@@ -4,7 +4,7 @@
   <p class='login'>
   <% if session[:login_uid] %>
     <%= link_to 'ログアウト', top_logout_path, class:'link' %><br>
-    <%= link_to "投稿する", new_cafe_path, class:'link' %>
+    <%= link_to '投稿する', new_cafe_path, class:'link' %>
   <% else %>
     <%= link_to 'ログイン', top_main_path, class:'link' %><br>
     <%= link_to 'ユーザ一登録', new_user_path, class:'link' %>
