@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TagMapTest < ActiveSupport::TestCase
+class CafeTagRelationTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

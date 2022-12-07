@@ -1,11 +1,6 @@
-<h1>マイページ</h1>
-<% @cafe.each do |f| %>
-<p>
-    <%= cafe.name %>
-<br>
-    <%= cafe.message %>
-<br>
-    <%= image_tag "/get_image/#{e.id}" %>
-<hr>
-</p>
+<p>cafe index</p>
+
+<%= form_tag({controller:"cafes",action:"index"}, method: :get) do %>
+    <%= text_field_tag :tag %>
+    <%= submit_tag 'タグを追加' %>
 <% end %>
