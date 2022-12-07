@@ -6,4 +6,18 @@
   <%= link_to 'ログイン', top_main_path %><br>
   <%= link_to 'ユーザ一登録', new_user_path %>
 <% end %>
+
+<%= form_tag({controller:"cafes",action:"index"}, method: :get) do %>
+    <% Tag.all.each do |t| %>
+        <li><%= check_box :tag_ids, t.tag_name %><%= t.tag_name %></li>
+    <% end %>
+    <%= submit_tag '検索' %>
+<% end %>
+
+<h3>投稿を検索</h3>
+ <%= form_tag({controller:"cafes",action:"index"}, method: :get) do %>
+ <%= text_field_tag :search %>
+ <%= submit_tag '検索する' %>
+<% end %>
+
 </p>
