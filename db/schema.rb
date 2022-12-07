@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2022_12_07_065720) do
 
   create_table "cafe_tag_relations", force: :cascade do |t|
@@ -20,6 +21,9 @@ ActiveRecord::Schema.define(version: 2022_12_07_065720) do
     t.index ["cafe_id"], name: "index_cafe_tag_relations_on_cafe_id"
     t.index ["tag_id"], name: "index_cafe_tag_relations_on_tag_id"
   end
+=======
+ActiveRecord::Schema.define(version: 2022_11_30_083736) do
+>>>>>>> d5797e8f03efcea4c0173efe046a41a422b2f2ce
 
   create_table "cafes", force: :cascade do |t|
     t.string "name"
