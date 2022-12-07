@@ -1,1 +1,11 @@
-<p>cafe index</p>
+<h1>マイページ</h1>
+<% @cafe.each do |f| %>
+<p>
+    <%= cafe.name %>
+<br>
+    <%= cafe.message %>
+<br>
+    <%= image_tag "/get_image/#{e.id}" %>
+<hr>
+</p>
+<% end %>
