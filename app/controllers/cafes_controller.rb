@@ -10,7 +10,7 @@ class CafesController < ApplicationController
       @cafes.uniq!
     end
     
-     if params[:tag]
+    if params[:tag]
       Tag.create(tag_name: params[:tag])
     end
     
@@ -41,7 +41,7 @@ class CafesController < ApplicationController
 
   def edit
   end
-  
+
   
   def article_params
     params.require(:article).permit(:body, tag_ids: [])
