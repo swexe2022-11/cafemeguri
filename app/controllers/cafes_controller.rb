@@ -1,6 +1,7 @@
 class CafesController < ApplicationController
   def index
     @cafes = Cafe.all
+
     
     if params[:tag_ids]
       @cafes = []
@@ -23,6 +24,7 @@ class CafesController < ApplicationController
      #部分検索
       @cafes = Cafe.where("body LIKE ? ",'%' + params[:search] + '%') #キーワードの一部でも一致したら探しとってくる
     end
+
 
   end
 
@@ -49,11 +51,15 @@ class CafesController < ApplicationController
 
   def edit
   end
+
   
+
   def article_params
     params.require(:article).permit(:body, tag_ids: [])
   end
-  
-  
-  
+
+  def post_params
+    params.require(:post).permit(:body, :title, tag_ids: [])
+
+  end
 end

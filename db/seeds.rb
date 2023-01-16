@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Tag.create([
-  { tag_name: 'タグ1' },
-  { tag_name: 'タグ2' },
-  { tag_name: 'タグ3' },
-  { tag_name: 'タグ4' },
-  { tag_name: 'タグ5' }
+  { tag_name: '福岡市' },
+  { tag_name: '北九州市' },
+  { tag_name: '飯塚市' },
+  { tag_name: '八女市' },
+  { tag_name: '久留米市' }
 ])
