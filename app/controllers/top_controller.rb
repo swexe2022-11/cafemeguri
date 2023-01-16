@@ -17,4 +17,16 @@ class TopController < ApplicationController
     session.delete(:login_uid)
     redirect_to root_path
   end
+  
+  def mypage
+    @cafes=Cafe.all
+    
+  end
+  
+  def destroy
+    cafe = Cafe.find(params[:id])
+    cafe.destroy
+    redirect_to cafe_path
+  end
+  
 end
