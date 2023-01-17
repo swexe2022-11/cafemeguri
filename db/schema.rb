@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_17_163204) do
+ActiveRecord::Schema.define(version: 2023_01_17_223556) do
 
   create_table "cafe_tag_relations", force: :cascade do |t|
     t.integer "cafe_id"
@@ -33,13 +33,19 @@ ActiveRecord::Schema.define(version: 2023_01_17_163204) do
     t.string "address"
     t.float "latitude"
     t.float "longitude"
-    t.float "lat"
-    t.float "lng"
   end
 
   create_table "caves", force: :cascade do |t|
     t.string "name"
     t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "topic_id"
+    t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
