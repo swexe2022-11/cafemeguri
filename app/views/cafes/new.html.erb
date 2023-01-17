@@ -1,4 +1,20 @@
-<h1>投稿ページ</h1>
+<!DOCTYPE html>
+<html>
+  <body>
+  <p class='login'>
+  <% if session[:login_uid] %>
+    <%= link_to 'ログアウト', top_logout_path, class:'link' %>
+    <%= link_to '投稿する', new_cafe_path, class:'link' %>
+    <%= link_to 'マイページ', cafes_show_path, class:'link' %>
+  <% else %>
+    <%= link_to 'ログイン', top_main_path, class:'link' %>
+    <%= link_to 'ユーザ一登録', new_user_path, class:'link' %>
+  <% end %>
+  </p>
+  </body>
+</html>
+
+<h1>投稿</h1>
 <%= form_for @cafe, url:{action: :create} do |f| %>
 <p>
   <%= f.label :name, '店名' %>
@@ -22,7 +38,9 @@
           </div>
       <% end %>
   </div>
-  
+
 </p>
   <%= f.submit "投稿"%>
 <% end %>
+
+<%= link_to "戻る", :back %>

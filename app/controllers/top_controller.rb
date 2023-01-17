@@ -18,9 +18,8 @@ class TopController < ApplicationController
     redirect_to root_path
   end
   
-  def mypage
-    @cafes=Cafe.all
-    
+  def top
+    @cafe = Cafe.all
   end
   
   def destroy

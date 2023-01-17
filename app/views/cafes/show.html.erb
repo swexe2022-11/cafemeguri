@@ -1,12 +1,33 @@
-<table>
-  <tbody>
-        <tr>
-            <th>タイトル</th>
-            <td><%= @cafe.title %></td>
-        </tr>
-        <tr>
-            <th>内容</th>
-            <td><%= @cafe.content %></td>
-        </tr>
-  </tbody>  
-</table>
+<!DOCTYPE html>
+<html>
+  <body>
+  <p class='login'>
+  <% if session[:login_uid] %>
+    <%= link_to 'ログアウト', top_logout_path, class:'link' %>
+    <%= link_to '投稿する', new_cafe_path, class:'link' %>
+    <%= link_to 'マイページ', cafes_show_path, class:'link' %>
+  <% else %>
+    <%= link_to 'ログイン', top_main_path, class:'link' %>
+    <%= link_to 'ユーザ一登録', new_user_path, class:'link' %>
+  <% end %>
+  </p>
+  </body>
+</html>
+
+<h1>マイページ</h1>
+<% @cafe.each do |f| %>
+<p>
+  <%= f.name %>
+<br>
+  <%= f.message %>
+<br>
+  <%= image_tag "/get_image/#{f.id}" %>
+<br>
+
+
+  <%= link_to '編集', edit_cafe_path(f.id), class:'link' %>
+  <%= link_to '削除', cafe_path(f.id), method: :delete,class:'link' %>
+</p>
+<% end %>
+
+<%= link_to "戻る", :back %>

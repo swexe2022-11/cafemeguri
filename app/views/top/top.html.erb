@@ -5,7 +5,7 @@
   <% if session[:login_uid] %>
     <%= link_to 'ログアウト', top_logout_path, class:'link' %>
     <%= link_to '投稿する', new_cafe_path, class:'link' %>
-    <%= link_to 'マイページ', "top/mypage", class:'link' %>
+    <%= link_to 'マイページ', "cafes/show", class:'link' %>
   <% else %>
     <%= link_to 'ログイン', top_main_path, class:'link' %>
     <%= link_to 'ユーザ一登録', new_user_path, class:'link' %>
@@ -23,4 +23,15 @@
                      }
       %>
     <% end %>
+
+<% @cafe.each do |f| %>
+<p>
+  <%= f.name %>
+<br>
+  <%= f.message %>
+<br>
+  <%= image_tag "/get_image/#{f.id}" %>
+<br>
+<% end %>
+
 </p>

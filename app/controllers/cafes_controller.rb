@@ -1,6 +1,6 @@
 class CafesController < ApplicationController
   def index
-    @cafes = Cafe.all
+    @cafes = Cafe.order(created_at: :desc)#投稿順表示
 
     
     if params[:tag_ids]
@@ -24,32 +24,47 @@ class CafesController < ApplicationController
 
   def create
     @cafe = Cafe.new(name: params[:cafe][:name],message: params[:cafe][:message],image: params[:cafe][:image].read)
-    @cafe.save
-    redirect_to'/'
+    if @cafe.save
+      redirect_to root_path
+    else
+    redirect_to 'new'
+    end
   end
   
+  
   def get_image
-    image = Cafe.find(params[:id])
-    send_data image.file, disposition: :inline, type:'image/png'
-  end
-
-  def destroy
     cafe = Cafe.find(params[:id])
-    cafe.destroy
-    redirect_to cafe_path
+    send_data cafe.image, disposition: :inline, type:'image/png'
   end
 
   def edit
+   @cafe = Cafe.find(params[:id])
   end
-
   
-
+  def destroy
+    @cafe = Cafe.find(params[:id])
+    @cafe.destroy
+    redirect_to request.referer
+  end
+  
+  def update
+    @cafe = Cafe.find(params[:id])
+    if @cafe.update(name: params[:cafe][:name],message: params[:cafe][:message],image: params[:cafe][:image].read)
+       @cafe.save
+       redirect_to'/'
+    else
+      render :new
+    end
+  end
+  
+  def show
+    @cafe = Cafe.all
+  end
+  
+  private
+  
   def article_params
     params.require(:article).permit(:body, tag_ids: [])
   end
-
-  def post_params
-    params.require(:post).permit(:body, :title, tag_ids: [])
-
-  end
+  
 end
