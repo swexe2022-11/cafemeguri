@@ -28,4 +28,8 @@ class TopController < ApplicationController
     redirect_to cafe_path
   end
   
+  def cafe_params
+      params.require(:cafe).permit(:lat,:lng)
+  end
+  
 end

@@ -61,10 +61,9 @@ class CafesController < ApplicationController
     @cafe = Cafe.all
   end
   
-  private
-  
-  def article_params
-    params.require(:article).permit(:body, tag_ids: [])
+  def cafe_params
+      params.require(:cafe).permit(:lat,:lng)
   end
+  
   
 end
