@@ -4,6 +4,7 @@
   	<h1 class="headline">
       <a>cafe巡り</a>
     </h1>
+  <div class="right">
   <body>
   <p class='login'>
   <% if session[:login_uid] %>
@@ -17,15 +18,16 @@
   <% end %>
   </p>
   </body>
+  </div>
   </header>
 </html>
 
-<h1>マイページ</h1>
+<h1 class="font-weight-normal mt-3">mypage</h1>
 <% @cafe.each do |f| %>
 <p>
-  店名：<%= f.name %>
+  <font size="5">店名：<%= f.name %></font>
 <br>
-  コメント：<%= f.message %>
+  <font size="5">コメント：<%= f.message %></font>
 <br>
   <%= image_tag "/get_image/#{f.id}",class:'icon' %>
 <br>

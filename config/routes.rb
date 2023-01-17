@@ -4,9 +4,6 @@ Rails.application.routes.draw do
   get 'top/logout'
   get 'cafes/show'
   get 'get_image/:id', to: 'cafes#get_image'
-  get 'maps/index'
-  root to: 'maps#index'
-  resources :maps, only: [:index]
   post 'top/login'
   resources :users
   resources :cafes, only: [:create, :new, :edit, :update, :destroy]

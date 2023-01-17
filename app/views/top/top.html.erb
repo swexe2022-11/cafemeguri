@@ -4,12 +4,13 @@
   	<h1 class="headline">
       <a>cafe巡り</a>
     </h1>
+  <div class="right">
   <body>
   <p class='login'>
   <% if session[:login_uid] %>
     <%= link_to 'ログアウト', top_logout_path, class:'link' %>
     <%= link_to '投稿する', new_cafe_path, class:'link' %>
-    <%= link_to 'マイページ', "cafes/show", class:'link' %>
+    <%= link_to 'マイページ', cafes_show_path, class:'link' %>
     <%= link_to 'トップページ', root_path, class:'link' %>
   <% else %>
     <%= link_to 'ログイン', top_main_path, class:'link' %>
@@ -17,6 +18,7 @@
   <% end %>
   </p>
   </body>
+  </div>
   </header>
 </html>
 
@@ -30,6 +32,7 @@
       %>
 <% end %>
 
+
 <div class="cover-index">
   <div class="container">
     <div class="row justify-content-center">
@@ -38,9 +41,9 @@
     <div class="row justify-content-center">
       <% @cafe.each do |f| %>
       <p>
-         店名:<%= f.name %>
+         <font size="5">店名:<%= f.name %></font>
         <br>
-       コメント:<%= f.message %>
+       <font size="5">コメント:<%= f.message %></font>
       　<br>
           <%= image_tag "/get_image/#{f.id}",class:'icon' %>
         <br>
@@ -50,4 +53,5 @@
     </div>
   </div>
 </div>
+<
       
