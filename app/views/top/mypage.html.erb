@@ -1,0 +1,13 @@
+<h1>マイページ</h1>
+<% @cafes.each do |f| %>
+<p>
+  <% Cafe.find(f.id).name %>
+<br>
+  <% Cafe.find(f.id).message %>
+<br>
+  <%= image_tag "/get_image/#{f.id}" %>
+<br>
+  <%= link_to '編集', edit_cafe_path(f.id), class:'link' %>
+  <%= link_to '削除', cafe_path(f.id), method: :destroy, class:'link' %>
+</p>
+<% end %>

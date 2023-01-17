@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2022_12_07_065720) do
     t.string "pass"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
 end
