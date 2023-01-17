@@ -1,4 +1,4 @@
-class AddAddressInfoToPosts < ActiveRecord::Migration[5.2]
+class AddAddressInfoToCafes < ActiveRecord::Migration[5.2]
   def change
     add_column :cafes, :address, :string
     add_column :cafes, :latitude, :float
