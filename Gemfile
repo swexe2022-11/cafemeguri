@@ -66,4 +66,5 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem "dotenv-rails"
 
+gem 'gmaps4rails'
 gem "geocoder"

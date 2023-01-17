@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2023_01_17_223556) do
+=======
+ActiveRecord::Schema.define(version: 2022_12_07_065720) do
+>>>>>>> image
 
   create_table "cafe_tag_relations", force: :cascade do |t|
     t.integer "cafe_id"
@@ -30,9 +34,12 @@ ActiveRecord::Schema.define(version: 2023_01_17_223556) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
     t.string "address"
     t.float "latitude"
     t.float "longitude"
+=======
+>>>>>>> image
   end
 
   create_table "caves", force: :cascade do |t|

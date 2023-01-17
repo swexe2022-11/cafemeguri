@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html>
+  <header>
+  	<h1 class="headline">
+      <a>cafe巡り</a>
+    </h1>
+  <div class="right">
   <body>
   <p class='login'>
   <% if session[:login_uid] %>
     <%= link_to 'ログアウト', top_logout_path, class:'link' %>
     <%= link_to '投稿する', new_cafe_path, class:'link' %>
     <%= link_to 'マイページ', cafes_show_path, class:'link' %>
+    <%= link_to 'トップページ', root_path, class:'link' %>
   <% else %>
     <%= link_to 'ログイン', top_main_path, class:'link' %>
     <%= link_to 'ユーザ一登録', new_user_path, class:'link' %>
   <% end %>
   </p>
   </body>
+  </div>
+  </header>
 </html>
 
-<h1>マイページ</h1>
+<h1 class="font-weight-normal mt-3">mypage</h1>
 <% @cafe.each do |f| %>
 <p>
-  <%= f.name %>
+  <font size="5">店名：<%= f.name %></font>
 <br>
-  <%= f.message %>
+  <font size="5">コメント：<%= f.message %></font>
 <br>
-  <%= image_tag "/get_image/#{f.id}" %>
+  <%= image_tag "/get_image/#{f.id}",class:'icon' %>
 <br>
 
   <%= link_to '編集', edit_cafe_path(f.id), class:'link' %>

@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html>
+  <header>
+  	<h1 class="headline">
+      <a>cafe巡り</a>
+    </h1>
+  <div class="right">
   <body>
   <p class='login'>
   <% if session[:login_uid] %>
     <%= link_to 'ログアウト', top_logout_path, class:'link' %>
     <%= link_to '投稿する', new_cafe_path, class:'link' %>
-    <%= link_to 'マイページ', "cafes/show", class:'link' %>
+    <%= link_to 'マイページ', cafes_show_path, class:'link' %>
+    <%= link_to 'トップページ', root_path, class:'link' %>
   <% else %>
     <%= link_to 'ログイン', top_main_path, class:'link' %>
     <%= link_to 'ユーザ一登録', new_user_path, class:'link' %>
   <% end %>
   </p>
   </body>
+  </div>
+  </header>
 </html>
 
 <%= form_tag cafes_path, method: :get, class: 'boards__searchForm' do %>
@@ -24,14 +32,26 @@
       %>
 <% end %>
 
-<% @cafe.each do |f| %>
-<p>
-  <%= f.name %>
-<br>
-  <%= f.message %>
-<br>
-  <%= image_tag "/get_image/#{f.id}" %>
-<br>
-<% end %>
 
-</p>
+<div class="cover-index">
+  <div class="container">
+    <div class="row justify-content-center">
+      <h1 class="font-weight-normal mt-3">カフェ投稿一覧</h1>
+    </div>
+    <div class="row justify-content-center">
+      <% @cafe.each do |f| %>
+      <p>
+         <font size="5">店名:<%= f.name %></font>
+        <br>
+       <font size="5">コメント:<%= f.message %></font>
+      　<br>
+          <%= image_tag "/get_image/#{f.id}",class:'icon' %>
+        <br>
+      <% end %>
+      </p>
+     </div>
+    </div>
+  </div>
+</div>
+<
+      
