@@ -14,16 +14,6 @@ class CafesController < ApplicationController
     if params[:tag]
       Tag.create(tag_name: params[:tag])
     end
-    
-    #検索機能
-    if params[:search] == nil || '' #「検索」フォームに何も入力されてなかったら全部表示
-      @cafes= Cafe.all
-      elsif params[:search] == '' #paramsに空文字はいっていたら全部表示
-      @cafes= Cafe.all
-      else
-     #部分検索
-      @cafes = Cafe.where("body LIKE ? ",'%' + params[:search] + '%') #キーワードの一部でも一致したら探しとってくる
-    end
 
 
   end
