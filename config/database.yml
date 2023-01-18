@@ -25,7 +25,7 @@ production:
   adapter: postgresql
   encoding: unicode
   poll: 5
-  database: cafemeguri_fslh
-  username: cafemeguri_fslh_user
+  database: cafemeguri_d173
+  username: cafemeguri_d173_user
   password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
   url: <%= ENV['DATABASE_URL'] %>
